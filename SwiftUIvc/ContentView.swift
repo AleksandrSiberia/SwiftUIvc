@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-// Задача 1
+// Задачи 1, 2
 
 struct Gender: Identifiable {
 
@@ -31,12 +31,25 @@ struct ContentView: View {
 
         VStack(alignment: .center, spacing: 40) {
 
+
             Section {
+
+                Text("Первое и второе задание")
+                //     .bold()
+                //       .font(.system(size: 20))
+                //       .font(.system(.largeTitle))
+                    .font(.system(.title, design: .monospaced))
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                    .padding(20)
+                    .background(Color.gray)
+                    .cornerRadius(30)
+
+
 
                 Slider(value: self.$sliderValue, in: 10.0...200.0) {
                     editing in
 
-                    print(editing)
                     self.editing = editing
                 }
 
@@ -45,19 +58,31 @@ struct ContentView: View {
             }
 
 
+
             Form {
 
                 Section {
                     Toggle("Переключатель", isOn: self.$statusToggle)
                         .padding(10)
+                        .fontWeight(.regular)
 
                     Text("Статус выключателя = " + String(self.statusToggle))
+                        .font(.system(.callout , weight: .regular))
                 }
+
+
 
                 VStack(spacing: 16) {
 
                     Text("Выберите пол")
+                        .font(.system(.title2, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(.secondary)
+                        .padding()
+                        .multilineTextAlignment(TextAlignment.center)
                 }
+
+
 
                 HStack(alignment: .center) {
 
@@ -69,6 +94,7 @@ struct ContentView: View {
                     .foregroundColor(.blue)
 
 
+
                     Button {
                         self.gender = Gender(gender: "Женщина")
                     } label: {
@@ -77,13 +103,28 @@ struct ContentView: View {
                     }
                     .foregroundColor(.blue)
                 }
-
                 .alert(item: self.$gender) { gender in
                     Alert(title: Text("Вы выбрали \(gender.gender)"), dismissButton: .default(Text("Ok")))
                 }
             }
-        }
 
+
+
+
+            Section {
+                Text("SwiftUI")
+                    .font(.largeTitle)
+                    .foregroundColor(.red)
+                +
+                Text(" is")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                +
+                Text(" the coolest")
+                    .font(.footnote)
+                    .foregroundColor(.green)
+            }
+        }
         .padding(20)
         .foregroundColor(.gray)
         .cornerRadius(80)
