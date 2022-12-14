@@ -29,107 +29,118 @@ struct ContentView: View {
 
     var body: some View {
 
-        VStack(alignment: .center, spacing: 40) {
 
 
-            Section {
+        ScrollView {
 
-                Text("Первое и второе задание")
-                //     .bold()
-                //       .font(.system(size: 20))
-                //       .font(.system(.largeTitle))
-                    .font(.system(.title, design: .monospaced))
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                    .padding(20)
-                    .background(Color.gray)
-                    .cornerRadius(30)
-
-
-
-                Slider(value: self.$sliderValue, in: 10.0...200.0) {
-                    editing in
-
-                    self.editing = editing
-                }
-
-                Text("\(sliderValue)")
-                    .foregroundColor(editing ? .red : .gray)
-            }
-
-
-
-            Form {
+            VStack(alignment: .center, spacing: 40) {
 
                 Section {
-                    Toggle("Переключатель", isOn: self.$statusToggle)
-                        .padding(10)
-                        .fontWeight(.regular)
 
-                    Text("Статус выключателя = " + String(self.statusToggle))
-                        .font(.system(.callout , weight: .regular))
-                }
-
-
-
-                VStack(spacing: 16) {
-
-                    Text("Выберите пол")
-                        .font(.system(.title2, design: .rounded))
+                    Text("Первое и второе задание")
+                    //     .bold()
+                    //       .font(.system(size: 20))
+                    //       .font(.system(.largeTitle))
+                        .font(.system(.title, design: .monospaced))
                         .fontWeight(.bold)
-                        .foregroundColor(.secondary)
-                        .padding()
-                        .multilineTextAlignment(TextAlignment.center)
-                }
+                        .foregroundColor(.primary)
+                        .padding(20)
+                        .background(Color.gray)
+                        .cornerRadius(30)
 
 
 
-                HStack(alignment: .center) {
+                    Slider(value: self.$sliderValue, in: 10.0...200.0) {
+                        editing in
 
-                    Button {
-                        self.gender = Gender(gender: "Мужчина")
-                    } label: {
-                        Text("Мужчина")
+                        self.editing = editing
                     }
-                    .foregroundColor(.blue)
 
-
-
-                    Button {
-                        self.gender = Gender(gender: "Женщина")
-                    } label: {
-                        Text("Женщина"
-                        )
-                    }
-                    .foregroundColor(.blue)
+                    Text("\(sliderValue)")
+                        .foregroundColor(editing ? .red : .gray)
                 }
-                .alert(item: self.$gender) { gender in
-                    Alert(title: Text("Вы выбрали \(gender.gender)"), dismissButton: .default(Text("Ok")))
+                Spacer()
+
+
+
+                VStack {
+
+                    VStack {
+                        Toggle("Переключатель", isOn: self.$statusToggle)
+                            .padding(10)
+                            .fontWeight(.regular)
+
+                        Text("Статус выключателя = " + String(self.statusToggle))
+                            .font(.system(.callout , weight: .regular))
+                    }
+                    .padding(10)
+                    .background(Color(uiColor: UIColor(named: "Color1") ?? .white))
+                    .cornerRadius(20)
+                    Spacer(minLength: 50)
+
+
+
+                    VStack(spacing: 16) {
+
+                        Text("Выберите пол")
+                            .font(.system(.title2, design: .rounded))
+                            .fontWeight(.bold)
+                            .foregroundColor(.secondary)
+                            .padding()
+                            .multilineTextAlignment(TextAlignment.center)
+                    }
+                    .background(Color.cyan)
+                    .cornerRadius(14)
+
+
+
+                    HStack(alignment: .center) {
+
+                        Button {
+                            self.gender = Gender(gender: "Мужчина")
+                        } label: {
+                            Text("Мужчина")
+                        }
+                        .foregroundColor(.blue)
+
+
+
+                        Button {
+                            self.gender = Gender(gender: "Женщина")
+                        } label: {
+                            Text("Женщина"
+                            )
+                        }
+                        .foregroundColor(.blue)
+                    }
+                    .alert(item: self.$gender) { gender in
+                        Alert(title: Text("Вы выбрали \(gender.gender)"), dismissButton: .default(Text("Ok")))
+                    }
+                }
+                Spacer(minLength: 30)
+
+
+
+
+                Section {
+                    Text("SwiftUI")
+                        .font(.largeTitle)
+                        .foregroundColor(.red)
+                    +
+                    Text(" is")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                    +
+                    Text(" the coolest")
+                        .font(.footnote)
+                        .foregroundColor(.green)
                 }
             }
+            .padding(20)
+            .foregroundColor(.gray)
+            .cornerRadius(80)
 
-
-
-
-            Section {
-                Text("SwiftUI")
-                    .font(.largeTitle)
-                    .foregroundColor(.red)
-                +
-                Text(" is")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                +
-                Text(" the coolest")
-                    .font(.footnote)
-                    .foregroundColor(.green)
-            }
         }
-        .padding(20)
-        .foregroundColor(.gray)
-        .cornerRadius(80)
-
-
     }
 }
 
