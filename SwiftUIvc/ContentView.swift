@@ -8,139 +8,50 @@
 import SwiftUI
 
 
-// Задачи 1, 2
-
-struct Gender: Identifiable {
-
-    var id: String { gender }
-    var gender: String
-}
-
 
 struct ContentView: View {
 
-    @State private var statusToggle: Bool = true
-    @State private var sliderValue =  100.0
-
-    @State private var editing = false
-
-    @State private var gender: Gender?
+    @StateObject var viewRouter: ViewRouter
 
 
     var body: some View {
 
 
+        GeometryReader { geometry in
 
-        ScrollView {
-
-            VStack(alignment: .center, spacing: 40) {
-
-                Section {
-
-                    Text("Первое и второе задание")
-                    //     .bold()
-                    //       .font(.system(size: 20))
-                    //       .font(.system(.largeTitle))
-                        .font(.system(.title, design: .monospaced))
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                        .padding(20)
-                        .background(Color.gray)
-                        .cornerRadius(30)
+            VStack {
 
 
 
-                    Slider(value: self.$sliderValue, in: 10.0...200.0) {
-                        editing in
+                Spacer()
 
-                        self.editing = editing
-                    }
+                switch self.viewRouter.currentView {
 
-                    Text("\(sliderValue)")
-                        .foregroundColor(editing ? .red : .gray)
-                }
+                case .taskOneTwo:
+
+                TaskOneTwoView()
+
+                case .taskThree:
+
+                    Text("Task 3")
+            }
                 Spacer()
 
 
 
-                VStack {
+                HStack {
 
-                    VStack {
-                        Toggle("Переключатель", isOn: self.$statusToggle)
-                            .padding(10)
-                            .fontWeight(.regular)
+                    CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "lightbulb", text: "Задание 1-2", viewRouter: self.viewRouter, assignedPage: .taskOneTwo)
 
-                        Text("Статус выключателя = " + String(self.statusToggle))
-                            .font(.system(.callout , weight: .regular))
-                    }
-                    .padding(10)
-                    .background(Color(uiColor: UIColor(named: "Color1") ?? .white))
-                    .cornerRadius(20)
-                    Spacer(minLength: 50)
+                    CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "lightbulb.fill", text: "Задание 3", viewRouter: self.viewRouter, assignedPage: Page.taskThree)
 
-
-
-                    VStack(spacing: 16) {
-
-                        Text("Выберите пол")
-                            .font(.system(.title2, design: .rounded))
-                            .fontWeight(.bold)
-                            .foregroundColor(.secondary)
-                            .padding()
-                            .multilineTextAlignment(TextAlignment.center)
-                    }
-                    .background(Color.cyan)
-                    .cornerRadius(14)
-
-
-
-                    HStack(alignment: .center) {
-
-                        Button {
-                            self.gender = Gender(gender: "Мужчина")
-                        } label: {
-                            Text("Мужчина")
-                        }
-                        .foregroundColor(.blue)
-
-
-
-                        Button {
-                            self.gender = Gender(gender: "Женщина")
-                        } label: {
-                            Text("Женщина"
-                            )
-                        }
-                        .foregroundColor(.blue)
-                    }
-                    .alert(item: self.$gender) { gender in
-                        Alert(title: Text("Вы выбрали \(gender.gender)"), dismissButton: .default(Text("Ok")))
-                    }
                 }
-                Spacer(minLength: 30)
 
-
-
-
-                Section {
-                    Text("SwiftUI")
-                        .font(.largeTitle)
-                        .foregroundColor(.red)
-                    +
-                    Text(" is")
-                        .font(.headline)
-                        .foregroundColor(.blue)
-                    +
-                    Text(" the coolest")
-                        .font(.footnote)
-                        .foregroundColor(.green)
-                }
+                .frame(width: geometry.size.width, height: geometry.size.height / 8)
+                .background(Color("TabBarBackground"))
             }
-            .padding(20)
-            .foregroundColor(.gray)
-            .cornerRadius(80)
-
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
@@ -148,6 +59,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewRouter: ViewRouter())
     }
 }
