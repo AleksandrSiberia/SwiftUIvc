@@ -15,6 +15,8 @@
 		8B77B9532949B72300A8D1A3 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77B9522949B72300A8D1A3 /* ViewRouter.swift */; };
 		8B77B9552949E63600A8D1A3 /* TaskOneTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77B9542949E63600A8D1A3 /* TaskOneTwoView.swift */; };
 		8B77B9582949E80700A8D1A3 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77B9572949E80700A8D1A3 /* Gender.swift */; };
+		8B77B95A294B1C2800A8D1A3 /* TaskThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77B959294B1C2800A8D1A3 /* TaskThree.swift */; };
+		8B77B95E294B435D00A8D1A3 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77B95D294B435D00A8D1A3 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8B77B9522949B72300A8D1A3 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		8B77B9542949E63600A8D1A3 /* TaskOneTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOneTwoView.swift; sourceTree = "<group>"; };
 		8B77B9572949E80700A8D1A3 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		8B77B959294B1C2800A8D1A3 /* TaskThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskThree.swift; sourceTree = "<group>"; };
+		8B77B95D294B435D00A8D1A3 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +63,11 @@
 		8B77B93F29486D2F00A8D1A3 /* SwiftUIvc */ = {
 			isa = PBXGroup;
 			children = (
-				8B77B9562949E7EB00A8D1A3 /* ModelLayer */,
-				8B77B9512949B6CC00A8D1A3 /* ServiceLayer */,
-				8B77B94E2949B04900A8D1A3 /* CustomView */,
 				8B77B94029486D2F00A8D1A3 /* SwiftUIvcApp.swift */,
 				8B77B94229486D2F00A8D1A3 /* ContentView.swift */,
+				8B77B94E2949B04900A8D1A3 /* CustomView */,
+				8B77B9562949E7EB00A8D1A3 /* ModelLayer */,
+				8B77B9512949B6CC00A8D1A3 /* ServiceLayer */,
 				8B77B94429486D3000A8D1A3 /* Assets.xcassets */,
 				8B77B94629486D3000A8D1A3 /* Preview Content */,
 			);
@@ -81,8 +85,10 @@
 		8B77B94E2949B04900A8D1A3 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				8B77B94F2949B09000A8D1A3 /* CustomTabBarIcon.swift */,
 				8B77B9542949E63600A8D1A3 /* TaskOneTwoView.swift */,
+				8B77B959294B1C2800A8D1A3 /* TaskThree.swift */,
+				8B77B94F2949B09000A8D1A3 /* CustomTabBarIcon.swift */,
+				8B77B95D294B435D00A8D1A3 /* CustomButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -176,6 +182,8 @@
 				8B77B9582949E80700A8D1A3 /* Gender.swift in Sources */,
 				8B77B9502949B09000A8D1A3 /* CustomTabBarIcon.swift in Sources */,
 				8B77B94329486D2F00A8D1A3 /* ContentView.swift in Sources */,
+				8B77B95A294B1C2800A8D1A3 /* TaskThree.swift in Sources */,
+				8B77B95E294B435D00A8D1A3 /* CustomButton.swift in Sources */,
 				8B77B94129486D2F00A8D1A3 /* SwiftUIvcApp.swift in Sources */,
 				8B77B9552949E63600A8D1A3 /* TaskOneTwoView.swift in Sources */,
 				8B77B9532949B72300A8D1A3 /* ViewRouter.swift in Sources */,

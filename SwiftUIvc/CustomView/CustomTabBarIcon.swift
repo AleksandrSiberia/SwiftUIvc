@@ -15,10 +15,11 @@ struct CustomTabBarIcon: View {
     let height, width: CGFloat
     let nameImage, text: String
 
+
     @StateObject var viewRouter: ViewRouter
     let assignedPage: Page
 
-
+    
     var body: some View {
 
 

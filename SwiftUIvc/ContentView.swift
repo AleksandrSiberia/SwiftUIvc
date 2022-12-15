@@ -14,8 +14,8 @@ struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
 
 
+    
     var body: some View {
-
 
         GeometryReader { geometry in
 
@@ -27,13 +27,15 @@ struct ContentView: View {
 
                 switch self.viewRouter.currentView {
 
+
                 case .taskOneTwo:
 
                 TaskOneTwoView()
 
+
                 case .taskThree:
 
-                    Text("Task 3")
+                    TaskThree(screenHeight: geometry.size.height, width: geometry.size.width)
             }
                 Spacer()
 
