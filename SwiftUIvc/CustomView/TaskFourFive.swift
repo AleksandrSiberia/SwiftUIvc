@@ -8,9 +8,7 @@
 import Foundation
 import SwiftUI
 
-
-
-struct TaskFourFive: View {
+struct TaskFour: View {
 
     var array: [ModelForList] = []
 
@@ -38,7 +36,7 @@ struct TaskFourFive: View {
                     }
                 }
             }
-            .navigationTitle("Foto Baikal")
+            .navigationTitle("Foto")
         }
 
     }
@@ -65,6 +63,6 @@ struct TaskFourFive: View {
 struct TaskFour_Previews: PreviewProvider {
  
     static var previews: some View {
-        TaskFourFive()
+        TaskFour()
     }
 }

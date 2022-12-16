@@ -38,7 +38,7 @@ struct ContentView: View {
 
                 case .taskFour:
 
-                    TaskFour()
+                    TaskFourFive()
 
             }
                 Spacer()
@@ -51,7 +51,7 @@ struct ContentView: View {
 
                     CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "lightbulb.fill", text: "Задание 3", viewRouter: self.viewRouter, assignedPage: Page.taskThree)
 
-                    CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "list.bullet", text: "Задание 4", viewRouter: self.viewRouter, assignedPage: Page.taskFour)
+                    CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "list.bullet", text: "Задание 4-5", viewRouter: self.viewRouter, assignedPage: Page.taskFour)
                 }
 
                 .frame(width: geometry.size.width, height: geometry.size.height / 8)
