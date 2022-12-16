@@ -19,4 +19,5 @@ enum Page {
 
     case taskOneTwo
     case taskThree
+    case taskFour
 }

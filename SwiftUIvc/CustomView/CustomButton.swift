@@ -33,7 +33,7 @@ struct CustomButton: View {
         })
         .padding(.bottom, 15)
         .padding(.top, 15)
-        .background(Color.blue)
+        .background(Color("blue"))
         .foregroundColor(.white)
         .font(.title2)
         .cornerRadius(20)

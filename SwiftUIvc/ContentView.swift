@@ -14,7 +14,6 @@ struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
 
 
-    
     var body: some View {
 
         GeometryReader { geometry in
@@ -36,6 +35,11 @@ struct ContentView: View {
                 case .taskThree:
 
                     TaskThree(screenHeight: geometry.size.height, width: geometry.size.width)
+
+                case .taskFour:
+
+                    TaskFour()
+
             }
                 Spacer()
 
@@ -47,6 +51,7 @@ struct ContentView: View {
 
                     CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "lightbulb.fill", text: "Задание 3", viewRouter: self.viewRouter, assignedPage: Page.taskThree)
 
+                    CustomTabBarIcon(height: geometry.size.height / 28, width: geometry.size.width / 5, nameImage: "list.bullet", text: "Задание 4", viewRouter: self.viewRouter, assignedPage: Page.taskFour)
                 }
 
                 .frame(width: geometry.size.width, height: geometry.size.height / 8)
